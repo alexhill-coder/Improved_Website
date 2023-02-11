@@ -1,6 +1,6 @@
 # A Webpage Made With HTML, CSS, Bootstrap & JavaScript.
 
-Building upon my previous website [located here](https://github.com/alexhill-coder/Basic_Website) this website was further developed to accomidate additional pages and features such as like/save buttons, ability to leave reviews.
+Building upon my previous website [located here](https://github.com/alexhill-coder/Basic_Website) this website was further developed to accommodate additional pages and features such as like/save buttons, ability to leave reviews.
 
 In terms of functionality it is fairly simple there are links at the top/bottom of the screen that allow movement between the html pages with additional links on the index.html to the about and collections page. The website is fully responsive so can be seen on any device.
 
