@@ -1,0 +1,423 @@
+/* Top Nav bar */
+
+/* Adjusts the top nav bars color requiring an important tag to use */
+.bg-dark {
+    background-color: rgba(89,88,89,255)!important;
+}
+
+/* Overrides the given padding to my custom setting */
+.navbar-nav, .navbar-brand, .padding {
+    padding: .5em 1.5em;
+}
+
+/* Adds a slight transition delay for the background of the button when hovering over it. */
+.navbar-nav a {
+    transition: background-color 0.2s;
+}
+
+/* Highlights the area around the link as feedback to the user */
+.navbar-nav a:hover {
+    background-color: grey;
+}
+
+/* Carousel styles */
+
+/* Adjusts the background of the text on the first carosel to a transparent grey color and limiting it to the 
+text instead of the width of the screen.  */
+.bg-success {
+    background-color: rgba(89,88,89,0.75) !important;
+    margin: 0% 30%;
+}
+
+/* Home page text */
+
+/* Alters the font of the page to my trail and error approuch of identifying the best look.*/
+h1 {
+    font-size: 2.75em;
+    margin: 1.5em 0 1em 0;
+}
+
+h2 {
+    font-size: 2em;
+    margin: 1.5em 0 1em 0;
+}
+
+.text-centered {
+    color: rgba(89,88,89,255);
+    line-height: 1.3;
+    margin: 1em 2em 2em 2em;
+    letter-spacing: -0.035em;
+}
+
+.text-centered p {
+    font-size: 14pt;
+    margin: 0rem 2rem;
+}
+
+/* Alters the look of links in the paragragh as to not alter the look of the other links
+in the header and footer. */
+.text-centered a {
+    color: rgba(89,88,89,255);
+    border-bottom: 1px dashed rgba(89,88,89,255);
+    text-decoration: none;
+    display: inline-block;
+    transition: font-weight 0.2s;
+}
+
+/* Adds a slight animated effect to the links */
+.text-centered a:hover {
+    border-bottom: 1px solid rgba(89,88,89,255);
+    font-weight: bold;
+    transition: font-weight 0.2s;
+}
+
+/* Removes the border on the images put on by the styles above */
+.card a {
+    border: none;
+}
+
+.card a:hover {
+    border: none;
+}
+
+/* The cards have been set to the width of the screen to ensure that they maintain equal width with one another.
+Could have gone with a grid instead of flex but decided this allowed for easier manipulation of the positions */
+.card {
+    width: 25vw;
+    margin: 0 1em 1em 1em;
+}
+
+/* Makes the images of equal length and keeps the aspect ratio. */
+.card img {
+    height: 30vh;
+    object-fit: contain;
+}
+
+/* Could have used the bootstrap class text-center on te html page but used this method instead. */
+.card h5 {
+    text-align: center;
+}
+
+/* Do to issues of the screen size making testimonials section looking uneven, squashed the section uses the
+screen size to maintain the sections readability and button positions.  */
+#carouselExampleControls p {
+    width: 20vw;
+    margin: 2rem 0 2rem 0;
+}
+
+#carouselExampleControls figcaption {
+    width: 20vw;
+}
+
+#testimonials {
+    height: 20vh;
+}
+
+#testimonials .carousel-control-prev, #testimonials .carousel-control-next  {
+    height: 20vh;
+}
+
+/* About Page */
+
+/* Controls the size of the images and the space around them. */
+.img_left {
+    padding: 0 1vh 0 0;
+    margin: 1rem 0 0 0;
+    max-height: 30%;
+    max-width: 30%;
+}
+
+.img_right {
+    padding: 0 0 0 1vh;
+    margin: 1rem 0 0 0;
+    max-height: 30%;
+    max-width: 30%;
+}
+
+/* Provides the background of the paragraphs. */
+.greyBackground {
+    background-color: grey;
+}
+
+/* Contact page. */
+
+/* A class to limit the size the width form on larger screen and increased on smaller screens*/
+.formContainer {
+    max-width: 50vw;
+}
+
+/* To limit the size of the image */
+.contactImg {
+    width: 20%;
+}
+
+/* To alter the color and animate when the user hovers over the button */
+.formContainer button {
+    background-color: grey;
+    border-color: grey;
+    transition: background-color 0.2s;
+}
+
+/* To alter the color of button when hovering */
+.formContainer button:hover {
+    background-color: rgba(89,88,89,255);
+    border-color: grey;
+}
+
+/* To alter the font size and position on page. */
+.text-centered ul, .text-centered li {
+    font-size: 14pt;
+    margin: 0rem 2rem;
+}
+
+/* Collections */
+
+.imageControl {
+    height: 16vh;
+    object-fit: contain;
+}
+
+/* Changes the font to the selected color */
+tbody, thead {
+    color: rgba(89,88,89,255);
+}
+
+/* Changes the alternate background color font to the selected color. Can be used to alter the second background. */
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+  color: rgba(89,88,89,255);
+}
+
+/* To maintain a level of asthetics and readability the fonts/cards have to be altered depending on the screen width or height. */
+@media screen and (min-width: 1450px) {
+    .card {
+        width: 15vw;
+        margin: 0em 0em 1em 0em;
+    }
+
+    .text-centered p {
+        font-size: 14pt;
+    }
+}
+
+/* When the screen reaches a certain point the screen can become cluttered so fonts, margins, sizes are altered
+to accomadate this */
+@media screen and (max-width: 850px) {
+    h1 {
+        font-size: 2em;
+    }
+    .text-centered {
+        margin: .5em 1em 1em 1em;
+    }
+
+    .text-centered p {
+        font-size: 12pt;
+        margin: 0rem 0rem;
+    }
+
+    .text-centered ul, .text-centered li {
+        font-size: 12pt;
+        margin: 0rem 0rem;
+    }
+
+    .img_left {
+        max-height: 30%;
+        max-width: 30%;
+        margin: 0.5rem 0 0 0;
+        padding: 0 1vh 0 0;
+    }
+
+    .img_right {
+        max-height: 30%;
+        max-width: 30%;
+        margin: 0.5rem 0 0 0;
+    }
+
+    .card {
+        width: 40vw;
+        margin: 0em 0em 1em 0em;
+    }
+
+    #carouselExampleControls p {
+        width: 35vw;
+        margin: 2rem 0 0 0;
+    }
+    
+    #carouselExampleControls figcaption {
+        width: 35vw;
+        font-size: 10pt;
+    }
+
+    #testimonials {
+        height: 100%;
+    }
+
+    #testimonials .carousel-control-prev, #testimonials .carousel-control-next  {
+        height: 30vh;
+    }
+    
+    .formContainer {
+        max-width: 80vw;
+    }
+}
+
+/* The testimonials can become cluttered if the screen height is to small so it settings are altered to 
+account for this. */
+@media screen and (max-height: 750px) {
+
+    #testimonials {
+        height: 100%;
+    }
+
+    #testimonials .carousel-control-prev, #testimonials .carousel-control-next  {
+        height: 100%;
+    }
+
+    #carouselExampleControls p {
+        width: 35vw;
+        margin: 2rem 0 0 0;
+    }
+    
+    #carouselExampleControls figcaption {
+        width: 100%;
+        font-size: 10pt;
+    }
+}
+
+/* Footer Styles */
+
+/* Provides the background colors for each of the icons and maintains it when the button hovers over it. */
+.facebook {
+    background-color: #3b5998;
+}
+
+/* Without the background cover re-provided it disappears so it has to be set again. Along with a border
+as a slight additional visual cue.  */
+.facebook:hover {
+    background-color: #3b5998;
+    border: 1px solid grey;
+}
+
+.twitter {
+    background-color: #55acee;
+}
+
+.twitter:hover {
+    background-color: #55acee;
+    border: 1px solid grey;
+}
+
+.instagram {
+    background-color: #ac2bac;
+}
+
+.instagram:hover {
+    background-color: #ac2bac;
+    border: 1px solid grey;
+}
+
+.linkedin {
+    background-color: #0082ca;
+}
+
+.linkedin:hover {
+    background-color: #0082ca;
+    border: 1px solid grey;
+}
+
+/* Provides a color for the entire footer section */
+.footer {
+    background-color: grey;
+}
+
+/* Removes any default/bootstrap padding/margins for greater control in positioning */
+footer nav div .navbar-nav, #nopadding {
+    padding: 0em;
+    margin: 0;
+}
+
+footer nav div .navbar {
+    padding: 0em;
+    margin: 0;
+}
+
+/* Provides a procise use of sections/classes/elements to highlight the background of the button the mouse is hovering over. */
+footer .navbar-nav a:hover {
+    background-color: rgba(89,88,89,255);
+}
+
+/* Provides additional space at the end of the footer section. */
+.footerPadding {
+    padding: 0rem 0rem 1.5rem!important;
+}
+
+/* Contains the extended functionality provided by javascript. */
+
+/* Controls the position/color & size of the like/save button. */
+.card-button {
+    margin: 0px;
+    position: absolute;
+    right: 0%;
+}
+
+.card-icon {
+    padding: 2px 3.5px 2px 2.5px;
+    margin: 0 0 0px 0px;
+    font-size: 26px;
+    color: rgba(89,88,89,255);
+    background: white;
+    border: none;
+}
+
+.card-icon:hover {
+    background-color: rgba(89,88,89,255);
+    color: white;
+    border: none;
+}
+
+/* Removes the underline style from the like/save button which was added on some pages. */
+#S01, #S02, #S03, #S04, #S05, #S06, #S07, #S08, #S09, #S10, #S11, #S12, 
+#L01, #L02, #L03, #L04, #L05, #L06, #L07, #L08, #L09, #L10, #L11, #L12{
+    border: none;
+}
+
+/* Provides some feedback to let the user know the button was selected/deselected. */
+.cardOn {
+    background: greenyellow;
+}
+
+/* Ensures that the mouse is a pointer on clickable links. */
+a {
+    cursor: pointer;
+}
+
+/* Used by the contact page to controls the screen feedback to let the user know a message was sent. */
+#success {
+    background-color: greenyellow;
+    padding: 20px 0px;
+    min-width: 400px;
+    max-width: 50vw;
+}
+
+#centerText {
+    min-width: 400px;
+    max-width: 50vw;
+}
+
+.border {
+    border: 1px solid grey;
+}
+
+/* Controls the form in the review section. */
+.reviewSection {
+    background-color: grey;
+    color: white;
+    padding: 10px 0px;
+    min-width: 400px;
+    max-width: 50vw;
+    border-radius: 5px;
+}
+
+#image {
+    max-height: 400px;
+}

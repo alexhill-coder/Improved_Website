@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Provides a title to the browser tab -->
+    <title>GoodReads</title>
+
+    <!-- Uses the css styles from the bootstrap version 5.2.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <!-- Uses a custom stylesheet to make alterations to the bootstrap styles -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- An additional script to add icons from the website font awesome -->
+    <script src="https://kit.fontawesome.com/ba7a185151.js" crossorigin="anonymous"></script>
+</head>
+
+<!-- The page onload will update the saved icons and let the user know how many saved items they have. The page will also add an
+event listener to all the image card icons and like/save buttons. -->
+<body id="index" onload="myLoad()">
+    <!-- The header contains an unordered list to create the top menu buttons that will hide in a button when
+    the screen becomes too small -->
+    <header>
+          <nav class="navbar navbar-dark navbar-expand-md bg-dark">
+              <div class="container-fluid">
+                <!-- Creates the Website name and an icon in the top left corner. -->
+                <a class="navbar-brand" href="index.html"><i class="fas fa-book-open"></i> GoodReads</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                  <ul class="navbar-nav ms-auto text-center">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="collections.html">Collections</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+
+                    <!-- This nav link will display the amount of items the user has saved -->
+                    <li class="nav-item">
+                      <a class="nav-link ms-md-4" href="saved.html">Saved <span class="align-text-top badge rounded-pill bg-danger">0</span></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+    </header>
+
+    <!-- Creates an image gallery at the top of the page to showcase the type of wares of the website. There are
+    3 images that will rotate through every few seconds or by pressing a buttton or indicator.
+    Each image has a text and custom background to supply information about the purpose of the website.
+    It is recommended to change the id but as there aren't any other element using this it was kept.-->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/homeImages/comics.jpg" class="d-block w-100" alt="comics">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="bg-success p-2 text-white">Bringing you Comics!</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/homeImages/magazines.jpg" class="d-block w-100" alt="magazines">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="bg-success p-2 text-white">Magazines!</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/homeImages/books.jpg" class="d-block w-100" alt="books">
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="bg-success p-2 text-white">and Books!</h5>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- This div contains the body of the page which is split into 6 sections the website intro, newest items, how help/contact
+    and testimonials. The div is given a class that allows for specified modification of this section such as the alteration of the 
+    paragraphs font and margins depending on the screen size. -->
+    <div class="text-centered">
+
+      <!-- The fw-bold class is a bootstrap class that bolds text. -->
+      <h1 class="fw-bold">Expand Your Horizons!</h1>
+      <p>
+        Whether your looking for comics, magazines or books we are dedicated to bringing you the best available.<br><br>
+        This website is open to all, the collections are free to read and if you want to upload your own collections we are more than happy to
+        help. Anyone can participate to expand this site, regardless of the type of reading material, to bring much entertainment to our visitors.
+      </p>
+      
+      <h2 class="fw-bold">Newest Arrivals</h2>
+
+      <!-- The section tag contains 12 card elements from bootstrap each containing an image link and a title. This section is the 
+      most dynamic as it changes to 6 per row, 3 per row and 2 per row depending on the size of the screen. -->
+      <section class="d-flex flex-wrap justify-content-evenly">
+
+        <!-- These cards have been altered from the previous project to allow for the images to send the user to the review page
+        and buttons that allow the user to save/like each item that will carry across the page refreshs. The event listeners
+        are added by targeting the name of each item. -->
+        <div class="card">
+          <a name="review"><img src="images/collections/sonic_the_comic/01.jpg" class="card-img-top" alt="Sonic the Comic (1993) by Fleetway"></a>
+            <a name="saveButton" class="btn btn-floating d-inline-flex card-button card-icon" id="S09" role="button">
+              <i class="fas fa-plus-square"></i>
+            </a>
+            <a name="likeButton" class="btn btn-floating d-inline-flex card-button card-icon me-5" id="L09" role="button">
+              <i class="fas fa-check-square"></i>
+            </a>
+          <div class="card-body">
+            <h5 class="card-title">Sonic the Comic (1993) by Fleetway</h5>
+          </div>
+        </div>
+        <div class="card">
+          <a name="review"><img src="images/collections/history_of_the_first_world_war/01.jpg" class="card-img-top" alt="History of the First World War (1966)"></a>
+            <a name="saveButton" class="btn btn-floating d-inline-flex card-button card-icon" id="S04" role="button">
+              <i class="fas fa-plus-square"></i>
+            </a>
+            <a name="likeButton" class="btn btn-floating d-inline-flex card-button card-icon me-5" id="L04" role="button">
+              <i class="fas fa-check-square"></i>
+            </a>
+          <div class="card-body">
+            <h5 class="card-title">History of the First World War (1966)</h5>
+          </div>
+        </div>
+        <div class="card">
+          <a name="review"><img src="images/collections/history_of_the_second_world_war/01.jpg" class="card-img-top" alt="History of the Second World War"></a>
+            <a name="saveButton" class="btn btn-floating d-inline-flex card-button card-icon" id="S05" role="button">
+              <i class="fas fa-plus-square"></i>
+            </a>
+            <a name="likeButton" class="btn btn-floating d-inline-flex card-button card-icon me-5" id="L05" role="button">
+              <i class="fas fa-check-square"></i>
+            </a>
+          <div class="card-body">
+            <h5 class="card-title">History of the Second World War</h5>
+          </div>
+        </div>
+        <div class="card">
+          <a name="review"><img src="images/collections/discovery/01.jpg" class="card-img-top" alt="Discovery by Marshall Cavendish"></a>
+            <a name="saveButton" class="btn btn-floating d-inline-flex card-button card-icon" id="S02" role="button">
+              <i class="fas fa-plus-square"></i>
+            </a>
+            <a name="likeButton" class="btn btn-floating d-inline-flex card-button card-icon me-5" id="L02" role="button">
+              <i class="fas fa-check-square"></i>
+            </a>
+          <div class="card-body">
+            <h5 class="card-title">Discovery by Marshall Cavendish</h5>
+          </div>
+        </div>
+        <div class="card">
+          <a name="review"><img src="images/collections/classic_adventure/01.jpg" class="card-img-top" alt="Classic Adventure by Fabbri (1993)"></a>
+            <a name="saveButton" class="btn btn-floating d-inline-flex card-button card-icon" id="S01" role="button">
+              <i class="fas fa-plus-square"></i>
+            </a>
+            <a name="likeButton" class="btn btn-floating d-inline-flex card-button card-icon me-5" id="L01" role="button">
+              <i class="fas fa-check-square"></i>
+            </a>
+          <div class="card-body">
+            <h5 class="card-title">Classic Adventure by Fabbri (1993)</h5>
+          </div>
+        </div>
+        <div class="card">
+          <a name="review"><img src="images/collections/archie_sonic_the_hedgehog/01.jpg" class="card-img-top" alt="Archie's Sonic The Hedgehog (1992)"></a>
+            <a name="saveButton" class="btn btn-floating d-inline-flex card-button card-icon" id="S10" role="button">
+              <i class="fas fa-plus-square"></i>
+            </a>
+            <a name="likeButton" class="btn btn-floating d-inline-flex card-button card-icon me-5" id="L10" role="button">
+              <i class="fas fa-check-square"></i>
+            </a>
+          <div class="card-body">
+            <h5 class="card-title">Archie's Sonic The Hedgehog (1992)</h5>
+          </div>
+        </div>
+        <div class="card">
+          <a name="review"><img src="images/collections/murder_casebook/01.jpg" class="card-img-top" alt="Murder Casebook Collection (1989)"></a>
+            <a name="saveButton" class="btn btn-floating d-inline-flex card-button card-icon" id="S08" role="button">
+              <i class="fas fa-plus-square"></i>
+            </a>
+            <a name="likeButton" class="btn btn-floating d-inline-flex card-button card-icon me-5" id="L08" role="button">
+              <i class="fas fa-check-square"></i>
+            </a>
+          <div class="card-body">
+            <h5 class="card-title">Murder Casebook Collection (1989)</h5>
+          </div>
+        </div>
+        <div class="card">
+          <a name="review"><img src="images/collections/supercook/01.jpg" class="card-img-top" alt="Supercook by Marshall Cavendish"></a>
+            <a name="saveButton" class="btn btn-floating d-inline-flex card-button card-icon" id="S12" role="button">
+              <i class="fas fa-plus-square"></i>
+            </a>
+            <a name="likeButton" class="btn btn-floating d-inline-flex card-button card-icon me-5" id="L12" role="button">
+              <i class="fas fa-check-square"></i>
+            </a>
+          <div class="card-body">
+            <h5 class="card-title">Supercook by Marshall Cavendish</h5>
+          </div>
+        </div>
+        <div class="card">
+          <a name="review"><img src="images/collections/images_of_war/01.jpg" class="card-img-top" alt="Images Of War by Marshall Cavendish"></a>
+            <a name="saveButton" class="btn btn-floating d-inline-flex card-button card-icon" id="S06" role="button">
+              <i class="fas fa-plus-square"></i>
+            </a>
+            <a name="likeButton" class="btn btn-floating d-inline-flex card-button card-icon me-5" id="L06" role="button">
+              <i class="fas fa-check-square"></i>
+            </a>
+          <div class="card-body">
+            <h5 class="card-title">Images Of War by Marshall Cavendish</h5>
+          </div>
+        </div>
+        <div class="card">
+          <a name="review"><img src="images/collections/storyteller/01.jpg" class="card-img-top" alt="StoryTeller by Marshall Cavendish"></a>
+            <a name="saveButton" class="btn btn-floating d-inline-flex card-button card-icon" id="S11" role="button">
+              <i class="fas fa-plus-square"></i>
+            </a>
+            <a name="likeButton" class="btn btn-floating d-inline-flex card-button card-icon me-5" id="L11" role="button">
+              <i class="fas fa-check-square"></i>
+            </a>
+          <div class="card-body">
+            <h5 class="card-title">StoryTeller by Marshall Cavendish</h5>
+          </div>
+        </div>
+        <div class="card">
+          <a name="review"><img src="images/collections/man_myth_and_magic/01.jpg" class="card-img-top" alt="Man, Myth and Magic by Purnell"></a>
+            <a name="saveButton" class="btn btn-floating d-inline-flex card-button card-icon" id="S07" role="button">
+              <i class="fas fa-plus-square"></i>
+            </a>
+            <a name="likeButton" class="btn btn-floating d-inline-flex card-button card-icon me-5" id="L07" role="button">
+              <i class="fas fa-check-square"></i>
+            </a>
+          <div class="card-body">
+            <h5 class="card-title">Man, Myth and Magic by Purnell</h5>
+          </div>
+        </div>
+        <div class="card">
+          <a name="review"><img src="images/collections/draw_it_paint_it/01.jpg" class="card-img-top" alt="Draw It! Paint It! by Eaglemoss (1984)"></a>
+            <a name="saveButton" class="btn btn-floating d-inline-flex card-button card-icon" id="S03" role="button">
+              <i class="fas fa-plus-square"></i>
+            </a>
+            <a name="likeButton" class="btn btn-floating d-inline-flex card-button card-icon me-5" id="L03" role="button">
+              <i class="fas fa-check-square"></i>
+            </a>
+          <div class="card-body">
+            <h5 class="card-title">Draw It! Paint It! by Eaglemoss (1984)</h5>
+          </div>
+        </div>
+      </section>
+      
+      <!-- This paragraph contains an animated link to the collections page set using the bootstrap classes -->
+      <p>
+        <br><br><a class="position-relative top-50 start-50 translate-middle" href="collections.html">All Collections 
+        <i class="fa fa-long-arrow-right"></i></a>
+      </p>
+
+      <!-- An small paragraph letting people know how they can be involved with a link to the contact page -->
+      <h2 class="fw-bold">How You Can Help</h2>
+      <P>
+        Our goal is establishing "Universal Access For All" and we want to make sure that our collections are available to anyone. To ensure this 
+        we need help from the community to continue our goal. Whether through a donation, time or uploading collections all help is welcome. To
+        enquire about this or for any general questions please visit our page below:<br><br>
+        <a class="position-relative top-50 start-50 translate-middle" href="contact.html">Contact Us <i class="fa fa-long-arrow-right"></i></a>
+      </P>
+
+      <!-- The final section contain the testimonials of the site using a carousel to rotate between them all. Once the screen
+      becomes too small either vertically or horizontally the testimonials will alter to better fit the page. -->
+      <h2 class="fw-bold">Testimonials</h2>
+      <div id="testimonials" class="text-center">
+
+        <div id="carouselExampleControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
+          <div class="carousel-inner fw-bold">
+            <div class="carousel-item active">
+              <div class="d-block w-100" >
+                <div class="d-flex flex-wrap align-items-center justify-content-evenly">
+                  <figure class="text-center">
+                    <blockquote class="blockquote">
+                      <p>I had forgotten that there was a world of quality reading out there. Thanks for the access.</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                      John from London, England, UK
+                    </figcaption>
+                  </figure>
+                  <figure class="text-center">
+                    <blockquote class="blockquote">
+                      <p>So many wonderful books I haven't even heard of before but enjoyed immensely.</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                      Jane from Lincoln, England, UK
+                    </figcaption>
+                  </figure>
+                  <figure class="text-center">
+                    <blockquote class="blockquote">
+                      <p>After so many years its so good to be able to read my favorite magazines again.</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                      Eric from Manchester, England, UK
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="d-block w-100" >
+                <div class="d-flex flex-wrap align-items-center justify-content-evenly">
+                  <figure class="text-center">
+                    <blockquote class="blockquote">
+                      <p>Collected this magazine for many years and now I can read them again.</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                      Mitchell from Edinborough, England, UK
+                    </figcaption>
+                  </figure>
+                  <figure class="text-center">
+                    <blockquote class="blockquote">
+                      <p>Wanted to read this when it came out but missed the chance, glad to have the oppurtunity again.</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                      Paul from Liverpool, England, UK
+                    </figcaption>
+                  </figure>
+                  <figure class="text-center">
+                    <blockquote class="blockquote">
+                      <p>Never paid much attention to these books when they came out, missed a lot of fun.</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                      Mark from Cardiff, England, UK
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="d-block w-100" >
+                <div class="d-flex flex-wrap align-items-center justify-content-evenly">
+                  <figure class="text-center">
+                    <blockquote class="blockquote">
+                      <p>Loved this comic as a kid, glad to show it to my own.</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                      Hugh from Darlington, England, UK
+                    </figcaption>
+                  </figure>
+                  <figure class="text-center">
+                    <blockquote class="blockquote">
+                      <p>A great collection that has been unavailable for many years, glad to go through it again.</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                      Tom from Stockton, England, UK
+                    </figcaption>
+                  </figure>
+                  <figure class="text-center">
+                    <blockquote class="blockquote">
+                      <p>Had most of these comics but lost them years ago, glad to see them again after so much time.</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                      Lee from Birmingham, England, UK
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>     
+      </div>
+
+    </div>
+
+    <!-- The footer contains additional links to the other pages, social media links and the copyright for the site. -->
+    <footer class="footer text-white text-center">
+      
+      <!-- The navigation links partially using the nav classes from above to adjust to the asthetics of the buttons -->
+      <div class="container pb-04 ">
+
+        <nav id="nopadding" class="navbar navbar-dark navbar-expand mb-3">
+          <div class="container mt-3">
+              <div class="navbar-nav mx-auto">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link" href="collections.html">Collections</a>
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+
+                <!-- This nav link will display the amount of items the user has saved -->
+                <a class="nav-link" href="saved.html">Saved <span class="align-text-top badge rounded-pill bg-danger">0</span></a>
+              </div>
+          </div>
+        </nav>
+
+        <!-- Contains 4 icons from the site font awesome site for 4 social media sites which change when you hover over them.
+        Using the bootstrap classes the icons are centered and the first 3 have an additional class to seperate them out.  -->
+        <div id="icons" class="mb-4">
+
+        
+          <!-- Facebook -->
+          <a class="btn btn-floating me-5 facebook" href="https://github.com/alexhill-coder/hobbysite.git" role="button">
+            <i class="fab fa-facebook"></i>
+          </a>
+
+          <!-- Twitter -->
+          <a class="btn btn-floating me-5 twitter" href="https://github.com/alexhill-coder/hobbysite.git" role="button">
+            <i class="fab fa-twitter"></i>
+          </a>
+
+          <!-- Instagram -->
+          <a class="btn btn-floating me-5 instagram" href="https://github.com/alexhill-coder/hobbysite.git" role="button">
+            <i class="fab fa-instagram"></i>
+          </a>
+
+          <!-- Linkedin -->
+          <a class="btn btn-floating linkedin" href="https://github.com/alexhill-coder/hobbysite.git" role="button">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+     
+        </div>
+      </div>
+
+      <!-- The final part contains the copyright details and an external link for further information, currently my repository.  -->
+      <div class="footerPadding">
+        © 2022 Copyright:
+        <a class="text-white" href="https://github.com/alexhill-coder/hobbysite.git">GoodReads.com</a>
+      </div>
+    </footer>
+
+    <!-- These scripts enable the website to use the various bootstrap elements on the page -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" 
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" 
+    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+    <!-- This enables the page to use the custom javascript elements created for this project. -->
+    <script src="javascript/features.js"></script>
+</body>
+</html>
+
+<!-- Used the getbootstrap website to get general information on the bootstrap elements. -->
+<!-- Used the stackoverflow website to gain information on getting footer to stay at the end of a page, 
+change the colors of a striped bootstrap table and vertically align a table cell: -->
+<!-- https://getbootstrap.com/docs/5.0/getting-started/introduction/ -->
+<!-- https://stackoverflow.com/questions/40853952/bootstrap-footer-at-the-bottom-of-the-page/40854221 -->
+<!-- https://stackoverflow.com/questions/27747072/vertical-align-in-bootstrap-table -->
+<!-- https://stackoverflow.com/questions/20825211/bootstrap-table-striped-how-do-i-change-the-stripe-background-colour -->

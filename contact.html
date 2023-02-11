@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Provides a title to the browser tab -->
+    <title>GoodReads</title>
+
+    <!-- Uses the css styles from the bootstrap version 5.2.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <!-- Uses a custom stylesheet to make alterations to the bootstrap styles -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- An additional script to add icons from the website font awesome -->
+    <script src="https://kit.fontawesome.com/ba7a185151.js" crossorigin="anonymous"></script>
+</head>
+
+<!-- A bootstrap class has been added to the body and the footer to ensure that the footer always stays at the bottom of the screen.
+The page onload will update the saved icons and let the user know how many saved items they have. The page will also
+hide the success section of the page until the user has entered something.-->
+<body id="contact" onload="myLoad()" class="d-flex flex-column min-vh-100">
+    <!-- The header contains an unordered list to create the top menu buttons that will hide in a button when
+    the screen becomes too small -->
+    <header>
+          <nav class="navbar navbar-dark navbar-expand-md bg-dark">
+              <div class="container-fluid">
+                <!-- Creates the Website name and an icon in the top left corner. -->
+                <a class="navbar-brand" href="index.html"><i class="fas fa-book-open"></i> GoodReads</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                  <ul class="navbar-nav ms-auto text-center">
+                    <li class="nav-item">
+                      <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="collections.html">Collections</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
+                    </li>
+
+                    <!-- This nav link will display the amount of items the user has saved -->
+                    <li class="nav-item">
+                      <a class="nav-link ms-md-4" href="saved.html">Saved <span class="align-text-top badge rounded-pill bg-danger">0</span></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+    </header>
+
+    <!-- All elements of the body are centered in order to take into account that on larger screens the list stays
+    on the left side of the page leaving the right side blank making the screen look off. -->
+    <div >
+
+      <!-- The fw-bold class is a bootstrap class that bolds text. -->
+      <h1 class="fw-bold text-centered">How to Contact Us</h1>
+
+      <!-- An image to brighton the page up and make it more appealing -->
+      <img src="https://cdn.pixabay.com/photo/2019/07/03/05/58/envelope-4313721_960_720.png" class="d-flex mx-auto mb-5 contactImg" alt="email logo">
+      <p class="text-center">To contact us please message us by filling out the form below: <br><br></p>
+
+      <!-- An unordered list providing instructions to help the user fill out the form. -->
+      <div class="d-flex justify-content-center">
+          <ul>
+            <li>Please provide your email address</li>
+            <li>Select the appropriate header for your message so the appropriate team can help you.</li>
+            <li>General - If you want to discuss any of the collections.</li>
+            <li>Enquiry - If you have any works that you want us to digitize.</li>
+            <li>Issues - If you have discovered an issue with any of the works on the site.</li>
+            <li>Other - For anything that doesn't fall under the other categories.</li>
+            <li>Write a your message in the text field and be as detailed as you can so we can better assess the situation.</li>
+            <li>Please consider subscribing to our newsletter.</li>
+            <li>Finally submit your message and we'll get in touch as soon as we can.</li>
+          </ul>    
+      </div>
+
+      <!-- A centered form that allows the user to input an email, select a radio button to provide a header, the textarea for the message,
+      a checkbox for a newsletter and a submit button. -->
+      <div class="d-flex justify-content-center mt-5">
+        <div class="formContainer">
+          <form class="row g-3">
+            <div class="col-md-12">
+              <label for="inputEmail" class="form-label">Please provide your email address:</label>
+              <input type="email" placeholder="example@nowhere.com" class="form-control" id="inputEmail">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="col-3 d-flex justify-content-center form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="General" checked>
+              <label class="form-check-label" for="General">General</label>
+            </div>
+            <div class="col-3 d-flex justify-content-center form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="Enquiry">
+              <label class="form-check-label" for="Enquiry">Enquiry</label>
+            </div>
+            <div class="col-3 d-flex justify-content-center form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="Issues">
+              <label class="form-check-label" for="Issues">Issues</label>
+            </div>
+            <div class="col-3 d-flex justify-content-center form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="Other">
+              <label class="form-check-label" for="Other">Other</label>
+            </div>
+            <div class="col-12">
+              <label for="message">Please write your message here:</label>
+              <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  Subcribe to Newsletter
+                </label>
+              </div>
+            </div>
+            <div class="col-12">
+              <button type="button" onclick="messageSent()" class="btn btn-primary">Send Message</button>
+              <hr>
+            </div>
+          </form>
+        </div>
+      </div> 
+
+      <!-- This section provides the user with feedback to let them know that there message was received. It will only appear
+      once a message has been submitted but is not recorded as it is mearly a confirmation message.-->
+      <div id="centerText" class="mx-auto">
+        <h5 id="success" class="mx-auto text-center">Congratulations! Your Message Has Been Sent!</h5><br>
+        <div class="row">
+          <p id="sentEmail" class="border col-6 text-center">From: Noone@know.com</p>
+          <p id="sentSubject" class="border col-6 text-center">Subject: General</p>
+          <div class="border">
+          <p class="col-2 text-center">Message:</p>
+          <p id="sentMessage" class="col-12 text-center">This is the general message.</p>
+          </div>
+          <p id="sentSubs" class="border col-12 mt-3">I'm not interested in subscribing.</p>
+        </div>
+      </div>
+
+
+    </div>
+
+    
+    
+
+    <!-- The footer contains additional links to the other pages, social media links and the copyright for the site.
+    Also contains a bootstrap class to maintain its position at the bottom of the page even if there is no body to the page. -->
+    <footer class="footer text-white text-center mt-auto">
+      
+      <!-- The navigation links partially using the nav classes from above to adjust to the asthetics of the buttons -->
+      <div class="container pb-04 ">
+
+        <nav id="nopadding" class="navbar navbar-dark navbar-expand mb-3">
+          <div class="container mt-3">
+              <div class="navbar-nav mx-auto">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="collections.html">Collections</a>
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
+
+                <!-- This nav link will display the amount of items the user has saved -->
+                <a class="nav-link" href="saved.html">Saved <span class="align-text-top badge rounded-pill bg-danger">0</span></a>
+              </div>
+          </div>
+        </nav>
+
+        <!-- Contains 4 icons from the site font awesome site for 4 social media sites which change when you hover over them.
+        Using the bootstrap classes the icons are centered and the first 3 have an additional class to seperate them out.  -->
+        <div id="icons" class="mb-4">
+
+        
+          <!-- Facebook -->
+          <a class="btn btn-floating me-5 facebook" href="https://github.com/alexhill-coder/hobbysite.git" role="button">
+            <i class="fab fa-facebook"></i>
+          </a>
+
+          <!-- Twitter -->
+          <a class="btn btn-floating me-5 twitter" href="https://github.com/alexhill-coder/hobbysite.git" role="button">
+            <i class="fab fa-twitter"></i>
+          </a>
+
+          <!-- Instagram -->
+          <a class="btn btn-floating me-5 instagram" href="https://github.com/alexhill-coder/hobbysite.git" role="button">
+            <i class="fab fa-instagram"></i>
+          </a>
+
+          <!-- Linkedin -->
+          <a class="btn btn-floating linkedin" href="https://github.com/alexhill-coder/hobbysite.git" role="button">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+     
+        </div>
+      </div>
+
+      <!-- The final part contains the copyright details and an external link for further information, currently my repository.  -->
+      <div class="footerPadding">
+        © 2022 Copyright:
+        <a class="text-white" href="https://github.com/alexhill-coder/hobbysite.git">GoodReads.com</a>
+      </div>
+    </footer>
+
+    <!-- These scripts enable the website to use the various bootstrap elements on the page -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" 
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" 
+    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+    <!-- This enables the page to use the custom javascript elements created for this project. -->
+    <script src="javascript/features.js"></script>
+</body>
+</html>
+
+<!-- Used the stackoverflow website to gain information on getting footer to stay at the end of a page: -->
+<!-- https://stackoverflow.com/questions/40853952/bootstrap-footer-at-the-bottom-of-the-page/40854221 -->
+<!-- Used the getbootstrap website to get general information on the bootstrap elements. -->
+<!-- Used the stackoverflow website to gain information on getting footer to stay at the end of a page, 
+change the colors of a striped bootstrap table and vertically align a table cell: -->
+<!-- https://getbootstrap.com/docs/5.0/getting-started/introduction/ -->
+<!-- https://stackoverflow.com/questions/40853952/bootstrap-footer-at-the-bottom-of-the-page/40854221 -->
+<!-- https://stackoverflow.com/questions/27747072/vertical-align-in-bootstrap-table -->
+<!-- https://stackoverflow.com/questions/20825211/bootstrap-table-striped-how-do-i-change-the-stripe-background-colour -->

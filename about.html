@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Provides a title to the browser tab -->
+    <title>GoodReads</title>
+
+    <!-- Uses the css styles from the bootstrap version 5.2.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <!-- Uses a custom stylesheet to make alterations to the bootstrap styles -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- An additional script to add icons from the website font awesome -->
+    <script src="https://kit.fontawesome.com/ba7a185151.js" crossorigin="anonymous"></script>
+</head>
+
+<!-- A bootstrap class has been added to the body and the footer to ensure that the footer always stays at the bottom of the screen.
+The page onload will update the saved icons and let the user know how many saved items they have. -->
+<body onload="myLoad()" class="d-flex flex-column min-vh-100">
+    <!-- The header contains an unordered list to create the top menu buttons that will hide in a button when
+    the screen becomes too small -->
+    <header>
+          <nav class="navbar navbar-dark navbar-expand-md bg-dark">
+              <div class="container-fluid">
+                <!-- Creates the Website name and an icon in the top left corner. -->
+                <a class="navbar-brand" href="index.html"><i class="fas fa-book-open"></i> GoodReads</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                  <ul class="navbar-nav ms-auto text-center">
+                    <li class="nav-item">
+                      <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="collections.html">Collections</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <!-- This nav link will display the amount of items the user has saved -->
+                    <li class="nav-item">
+                      <a class="nav-link ms-md-4" href="saved.html">Saved <span class="align-text-top badge rounded-pill bg-danger">0</span></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+    </header>
+
+    <div class="text-centered" >
+
+      <!-- The fw-bold class is a bootstrap class that bolds text. -->
+      <h1 class="fw-bold">About Us at GoodReads</h1>
+    </div>
+
+    <!-- To ensure that the background reaches the edge of the screen the div that controls the text is placed in another div
+    that provides the background for the paragraph. -->
+    <div class="greyBackground">
+
+      <!-- This div controls the font details and using bootstrap classes the text is colored white. The text and images are
+      also vertically aligned and situated at opposite ends of the horizontal screen. -->
+      <div class="text-centered text-white">
+        <p class="d-flex align-items-center justify-content-between">
+          
+          <!-- To control the position/size of the image and the proximity of the text an additional class is used. -->
+          <img src="https://cdn.pixabay.com/photo/2016/03/27/19/32/book-1283865_960_720.jpg" class="img_left" alt="open book">
+          Ever wanted to just pick up a good book, randomly pick up a magazine or comic and relax with the knowledge
+          that your going to enjoy it, to be able to find a similar selection of items that is just as good as the 
+          first and at your finger tips. This is the mission here at GoodReads to go through the insurmountable 
+          levels of reading material afforded to us in the digital age and locate the most interesting, well 
+          thought through collections around.
+        </p>
+      </div>
+    </div>
+
+    <!-- For the paragraphs that have a white background no extra div is needed. For the position the image is 
+    placed after the text and with additional bootstrap classes to maintain position at the edge of the screen. -->
+    <div class="text-centered">
+      <p class="d-flex align-items-center">
+        Starting life as a small project the demand for entertainment has never been higher and whatever the type 
+        of material as long as you can read it we are dedicated to making it available for anyone who wants it.
+        <img src="https://cdn.pixabay.com/photo/2015/01/09/11/09/meeting-594091_960_720.jpg" class="img_right d-flex ms-auto" alt="group meeting">
+      </p>
+    </div>
+    <!-- The pattern is repeated for the rest of the page. -->
+    <div class="greyBackground">
+      <div class="text-centered text-white">
+        <p class="d-flex align-items-center justify-content-between">
+          <img src="https://cdn.pixabay.com/photo/2018/06/18/11/02/books-3482286_960_720.jpg" class="img_left" alt="childrens books">
+          Childhood books that helped you sleep at night to the collective works of the world war.
+        </p>
+      </div>
+    </div>
+    <div class="text-centered">
+      <p class="d-flex align-items-center">
+        Weekly cooking magazines to help you with your favourite recipes or maybe ways to improve your creative skills.
+        <img src="https://cdn.pixabay.com/photo/2015/01/28/14/27/magazines-614897_960_720.jpg" class="img_right d-flex ms-auto" alt="magazines">
+      </p>
+    </div>
+    <div class="greyBackground">
+      <div class="text-centered text-white">
+        <p class="d-flex align-items-center justify-content-between">
+          <img src="https://cdn.pixabay.com/photo/2017/04/09/16/40/batman-2216148_640.jpg" class="img_left" alt="comic books">
+          Your favourite comics to delight your inner child or gruesome manga we have it right here.
+        </p>
+      </div>
+    </div>
+    <div class="text-centered">
+      <p class="d-flex align-items-center">
+        Join us and our community in the continuous search for good entertainment. Have anything you remember and 
+        wish to see available again? How about something you wish you had the opportunity to read? Or maybe you 
+        just want to chat about your favourite works? See below for our social media links or our contact page 
+        if you want to speak directly.  
+        <img src="https://cdn.pixabay.com/photo/2016/11/03/18/19/social-media-1795578_640.jpg" class="img_right d-flex ms-auto"
+         alt="social media icons">
+      </p>
+    </div>
+      
+
+    <!-- The footer contains additional links to the other pages, social media links and the copyright for the site.
+    Also contains a bootstrap class to maintain its position at the bottom of the page even if there is no body to the page. -->
+    <footer class="footer text-white text-center mt-auto">
+      
+      <!-- The navigation links partially using the nav classes from above to adjust to the asthetics of the buttons -->
+      <div class="container pb-04 ">
+
+        <nav id="nopadding" class="navbar navbar-dark navbar-expand mb-3">
+          <div class="container mt-3">
+              <div class="navbar-nav mx-auto">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="collections.html">Collections</a>
+                <a class="nav-link active" aria-current="page"  href="about.html">About</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-link" href="saved.html">Saved <span class="align-text-top badge rounded-pill bg-danger">0</span></a>
+              </div>
+          </div>
+        </nav>
+
+        <!-- Contains 4 icons from the site font awesome site for 4 social media sites which change when you hover over them.
+        Using the bootstrap classes the icons are centered and the first 3 have an additional class to seperate them out.  -->
+        <div id="icons" class="mb-4">
+
+        
+          <!-- Facebook -->
+          <a class="btn btn-floating me-5 facebook" href="https://github.com/alexhill-coder/hobbysite.git" role="button">
+            <i class="fab fa-facebook"></i>
+          </a>
+
+          <!-- Twitter -->
+          <a class="btn btn-floating me-5 twitter" href="https://github.com/alexhill-coder/hobbysite.git" role="button">
+            <i class="fab fa-twitter"></i>
+          </a>
+
+          <!-- Instagram -->
+          <a class="btn btn-floating me-5 instagram" href="https://github.com/alexhill-coder/hobbysite.git" role="button">
+            <i class="fab fa-instagram"></i>
+          </a>
+
+          <!-- Linkedin -->
+          <a class="btn btn-floating linkedin" href="https://github.com/alexhill-coder/hobbysite.git" role="button">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+     
+        </div>
+      </div>
+
+      <!-- The final part contains the copyright details and an external link for further information, currently my repository.  -->
+      <div class="footerPadding">
+        © 2022 Copyright:
+        <a class="text-white" href="https://github.com/alexhill-coder/hobbysite.git">GoodReads.com</a>
+      </div>
+    </footer>
+
+    <!-- These scripts enable the website to use the various bootstrap elements on the page -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" 
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" 
+    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+    <!-- This enables the page to use the custom javascript elements created for this project. -->
+    <script src="javascript/features.js"></script>
+</body>
+</html>
+
+<!-- Used the stackoverflow website to gain information on getting footer to stay at the end of a page: -->
+<!-- https://stackoverflow.com/questions/40853952/bootstrap-footer-at-the-bottom-of-the-page/40854221 -->
+<!-- Used the getbootstrap website to get general information on the bootstrap elements. -->
+<!-- Used the stackoverflow website to gain information on getting footer to stay at the end of a page, 
+change the colors of a striped bootstrap table and vertically align a table cell: -->
+<!-- https://getbootstrap.com/docs/5.0/getting-started/introduction/ -->
+<!-- https://stackoverflow.com/questions/40853952/bootstrap-footer-at-the-bottom-of-the-page/40854221 -->
+<!-- https://stackoverflow.com/questions/27747072/vertical-align-in-bootstrap-table -->
+<!-- https://stackoverflow.com/questions/20825211/bootstrap-table-striped-how-do-i-change-the-stripe-background-colour -->
