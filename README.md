@@ -40,7 +40,7 @@ Below shows the saved page where any of the items that have been saved (which ca
 </p>
 
 <p align="center">
- The review page allows the user to leave a review that will only be displayed for the selected series and viewable for as long as the browser is open.
+ The review page allows the user to leave a review that will only be displayed for the selected series and viewable for as long as the browser is open. 
 </p>
 
 <p align="center">
